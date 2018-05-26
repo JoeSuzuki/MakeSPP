@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
         image: "https://lh3.googleusercontent.com/YXQRKv60cfiwFXfG4cULrNIWjh4YV2Ey3-8ua0VUlzWpsVCaQXZLdTnNJmgHG6-yAcA=h300"
     }
 
+
     res.render('profile', obj);
 });
 
