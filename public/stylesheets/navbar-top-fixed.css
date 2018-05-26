@@ -3,3 +3,17 @@ body {
   min-height: 75rem;
   padding-top: 4.5rem;
 }
+
+.heights {
+  height: 100%;
+}
+
+.btn-space {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.space {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

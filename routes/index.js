@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
     MongoClient.connect(uri, function(err, db)
     {
       console.log(db);
-        db.
         db.close();
     });
   res.render('index', { title: 'Express' });
