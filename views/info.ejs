@@ -22,15 +22,14 @@
         <h1>Please select you interests</h1>
         <p class="lead">Please select your interests. We will use your infomation to give you the best experience.</p>
         <!-- <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a> -->
-        <div class="container-fluid">
-        <div class="row">
+        <form action="/">
           <% for(var i=0; i<tagArray.length; i++){ %>
           <div class="col-md-4">
-            <button class="btn btn-block btn-info btn-space"> <%= tagArray[i] %> </button>
+            <label><input id="checkbox-2-1" class="regular-checkbox big-checkbox" type="checkbox" name="personality"> <%= tagArray[i] %> </label>
           </div>
-          <% } %>
-        </div>
-        </div>
+           <% } %>
+          <button type="submit" class="btn btn-block btn-info"> Submit</button>
+        </form>
       </div>
     </main>
 
