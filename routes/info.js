@@ -11,7 +11,7 @@ var collectionName = "infotags";
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/:user', function(req, res, next) {
     MongoClient.connect(uri, function(err, db)
     {
         var dbo = db.db(dbName);
@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
                 if(err){
                     throw err;
                 }
-                var obj = {tagArray: result}
+                var obj = {tagArray: result, name: req.params.user}
                 res.render('info', obj);
                 db.close();
             }
@@ -28,5 +28,15 @@ router.get('/', function(req, res, next) {
 
     });
 });
-
+router.post('/', function (req, res) {
+   MongoClient.connect(uri, function (err, db) {
+       var username = req.body.name;
+       var tagsChecked = req.body.tagArray;
+       console.log("testing")
+       console.log(tagsChecked);
+       var dbo = db.db(dbName);
+       dbo.collection(collectionName).update({name:username},{tags:tagsChecked});
+       res.render()
+   });
+});
 module.exports = router;

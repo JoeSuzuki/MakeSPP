@@ -18,7 +18,9 @@ router.post('/',function (req,res) {
     var userObj = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        tags: [],
+        friends: []
     };
     console.log(userObj);
     MongoClient.connect(uri, function (err, db) {
@@ -29,28 +31,12 @@ router.post('/',function (req,res) {
             db.close();
         });
     });
-    res.render('index', { title: 'Taggy' });
+    var profileObj = {
+        name: userObj.name,
+        tagArray:[],
+        friendArray:[],
+        image: "https://lh3.googleusercontent.com/YXQRKv60cfiwFXfG4cULrNIWjh4YV2Ey3-8ua0VUlzWpsVCaQXZLdTnNJmgHG6-yAcA=h300"
+    };
+    res.render('profile', profileObj);
 });
-
 module.exports = router;
-
-var express        =         require("express");
-var bodyParser     =         require("body-parser");
-var app            =         express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-app.get('/',function(req,res){
-    res.sendfile("createAccount.ejs");
-});
-app.post('/createAccount',function(req,res){
-    var name=req.body.name;
-    var email=req.body.email;
-    var password=req.body.password;
-    console.log("name = "+name+", email is "+email+ "password is "+password);
-    res.end("yes");
-});
-app.listen(3000,function(){
-    console.log("Started on PORT 3000");
-})

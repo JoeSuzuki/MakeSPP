@@ -25,9 +25,10 @@
         <form action="/">
           <% for(var i=0; i<tagArray.length; i++){ %>
           <div class="col-md-4">
-            <label><input id="checkbox-2-1" class="regular-checkbox big-checkbox" type="checkbox" name="personality"> <%= tagArray[i].name %> </label>
+            <label><input name = "tagsArr" id="checkbox-2-1" class="regular-checkbox big-checkbox" type="checkbox" name="personality"> <%= tagArray[i].name %> </label>
           </div>
            <% } %>
+          <input type="hidden" name="user" value="<%name%>">
           <button type="submit" class="btn btn-block btn-info"> Submit</button>
         </form>
       </div>
