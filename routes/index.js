@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
       console.log(db);
         db.close();
     });
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Taggy' });
 });
 
 module.exports = router;
