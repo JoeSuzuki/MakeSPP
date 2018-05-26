@@ -47,24 +47,11 @@
         <p class="lead">Please select your intrests. We will use your infomation to give you the best experience.</p>
         <!-- <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a> -->
         <div class="row">
+          <% for(var i=0; i<tagArray.length; i++){ %>
           <div class="col-md-4">
-            <h3>Art</h3>
+            <button class="btn btn-block btn-info"> tagArray[i] </button>
           </div>
-          <div class="col-md-4">
-            <h3></h3>
-          </div>
-          <div class="col-md-4">
-            <h3> </h3>
-          </div>
-          <div class="col-md-4">
-            <h3> </h3>
-          </div>
-          <div class="col-md-4">
-            <h3> </h3>
-          </div>
-          <div class="col-md-4">
-            <h3> </h3>
-          </div>
+          <% } %>
         </div>
       </div>
     </main>
